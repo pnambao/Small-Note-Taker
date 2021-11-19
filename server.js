@@ -1,11 +1,11 @@
 //Getting all the packages and stuff we need
 const express = require('express');
 const path = require('path');
-const { uuid } = require('uuid');
 const fs = require("fs");
 const util = require("util");
 const writeFile = util.promisify(fs.writeFile);
 const db = require('./db.json');
+const { nanoid } = require('nanoid');
 
 // Setting up the express app and the port
 const app = express();
@@ -31,7 +31,7 @@ app.get('/api/notes', (req, res) => res.json(db));
 // Receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client
 app.post('/api/notes', (req, res) => {
     const newNote = req.body;
-    newNote.id = uuid();
+    newNote.id = nanoid;
     db.push(newNote);
     res.json(newNote);
     writeFile('db.json', JSON.stringify(db));

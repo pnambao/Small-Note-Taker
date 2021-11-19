@@ -10,6 +10,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "uuid": "^8.3.2"
-  }
+    "fs": "0.0.1-security",
+    "nanoid": "^3.1.30"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnambao/Small-Note-Taker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pnambao/Small-Note-Taker"
+  },
+  "homepage": "https://github.com/pnambao/Small-Note-Taker#readme"
 }
